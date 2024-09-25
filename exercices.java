@@ -8,14 +8,18 @@ void main() {
     porsche.drive();
     porsche.klaxon();
 
-    Rectangle r = new Rectangle(10, 20);
-    System.out.println(r.area());
-    System.out.println(r.perimeter());
-    System.out.println(r.isValid());
+    Rectangle monRectangle = new Rectangle(10, 20);
+    Rectangle monAutreRectangle = new Rectangle(10, 5);
+    System.out.println(monRectangle.area());
+    System.out.println(monRectangle.perimeter());
+    System.out.println(monRectangle.isValid());
 
-    Square s = new Square(10);
-    System.out.println(s.area());
-    System.out.println(s.perimeter());
-    System.out.println(s.isValid());
-    System.out.println(s.isBiggerThan(r));
+    Square monCarre = new Square(10);
+    System.out.println(monCarre.area());
+    System.out.println(monCarre.perimeter());
+    System.out.println(monCarre.isValid());
+    System.out.println(
+        monCarre.isBiggerThan(monRectangle)
+    );
+    System.out.println(monCarre.isBiggerThan(monAutreRectangle));
 }

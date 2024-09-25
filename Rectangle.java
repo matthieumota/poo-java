@@ -3,20 +3,20 @@ class Rectangle {
     int length;
 
     Rectangle(int w, int l) {
-        width = w;
-        length = l;
+        this.width = w;
+        this.length = l;
     }
 
     int area() {
-        return width * length;
+        return this.width * this.length;
     }
 
     int perimeter() {
-        return (width + length) * 2;
+        return (this.width + this.length) * 2;
     }
 
     boolean isValid() {
-        return width > 0 && length > 0;
+        return this.width > 0 && this.length > 0;
     }
 }
 
@@ -24,22 +24,22 @@ class Square {
     int width;
 
     Square(int w) {
-        width = w;
+        this.width = w;
     }
 
     int area() {
-        return width * width;
+        return this.width * this.width;
     }
 
     int perimeter() {
-        return width * 4;
+        return this.width * 4;
     }
 
     boolean isValid() {
-        return width > 0;
+        return this.width > 0;
     }
 
-    boolean isBiggerThan(Rectangle r) {
-        return this.area() > r.area();
+    boolean isBiggerThan(Rectangle toto) {
+        return this.area() > toto.area();
     }
 }
