@@ -6,8 +6,8 @@ class Car {
     int wheels = 4;
     String color = "blanche";
     int year;
-    int kilometers = 0;
-    int fuel = 50;
+    int kilometers;
+    int fuel = 1;
 
     Car(String b, String m) {
         this.brand = b;
@@ -23,21 +23,24 @@ class Car {
 
     String present() {
         int currentYear = LocalDateTime.now().getYear();
-        int averageKm = kilometers / (currentYear - year);
+        int averageKm = this.kilometers / (currentYear - this.year);
 
-        if (year == 0) {
-            year = currentYear;
-            averageKm = kilometers;
+        if (this.year == 0) {
+            this.year = currentYear;
+            averageKm = this.kilometers;
         }
 
-        return String.format("%s %s livrée en %d avec %d km de couleur %s. Elle a fait %s km par an depuis sa livraison.", brand, model, year, kilometers, color, averageKm);
+        return String.format("%s %s livrée en %d avec %d km de couleur %s. Elle a fait %d km par an depuis sa livraison.", this.brand, this.model, this.year, this.kilometers, this.color, averageKm);
     }
 
     void drive() {
-        fuel -= 2;
+        this.fuel -= 2;
 
-        if (fuel <= 0) {
-            fuel = 0;
+        if (this.fuel <= 0) {
+            this.fuel = 0;
+
+            System.out.println("La "+this.brand+" ne peut pas rouler ou s'arrête");
+            return; // Stop le code dans la méthode
         }
 
         System.out.println("La "+this.brand+" roule, il lui reste "+fuel+"L");
