@@ -22,4 +22,14 @@ void main() {
         monCarre.isBiggerThan(monRectangle)
     );
     System.out.println(monCarre.isBiggerThan(monAutreRectangle));
+
+    CalculatorAdvanced c = new CalculatorAdvanced();
+    c.add(1).add(3).add(4).add(5);
+    // c.result = 153;
+    System.out.print(c.getResult());
+    c.toggle(); // ouvre ou ferme la calculette
+    System.out.print(c.isOpened());
+    //c.add(10).substract(4);
+    //c.multiply(2).divide(4);
+    //c.result(); // 3
 }
