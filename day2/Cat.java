@@ -6,10 +6,21 @@ import java.time.Period;
 class Cat {
     private String name;
     private LocalDate birthday;
+    private Address address;
 
     Cat(String n, LocalDate b) {
         this.name = n;
         this.birthday = b;
+    }
+
+    public Address getAddress() {
+        return this.address;
+    }
+
+    public Cat setAddress(Address a) {
+        this.address = a;
+
+        return this;
     }
 
     public String getName() {
