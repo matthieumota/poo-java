@@ -2,15 +2,29 @@ package day2;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 
 class Cat {
     private String name;
     private LocalDate birthday;
     private Address address;
+    private List<Cat> friends;
 
     Cat(String n, LocalDate b) {
         this.name = n;
         this.birthday = b;
+        this.friends = new ArrayList<Cat>();
+    }
+
+    public Cat addFriend(Cat friend) {
+        this.friends.add(friend);
+
+        return this;
+    }
+
+    public List<Cat> getFriends() {
+        return this.friends;
     }
 
     public Address getAddress() {
