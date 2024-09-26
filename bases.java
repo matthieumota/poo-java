@@ -1,5 +1,5 @@
 class App {
-    void main(String[] args) {
+    public static void main(String[] args) {
         Cat bianca = new Cat();
         bianca.name = "Bianca";
         bianca.age = 10;
@@ -10,8 +10,8 @@ class App {
         // System.out.print(mina);
         // System.out.print(bianca);
 
-        bianca = null;
-        mina = null;
+        // bianca = null;
+        // mina = null;
         System.gc();
 
         System.out.println(bianca.cry());

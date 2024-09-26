@@ -3,7 +3,7 @@ package day2;
 import java.time.LocalDate;
 
 class App {
-    void main(String[] args) {
+    public static void main(String[] args) {
         Cat garfield = new Cat("Garfield", LocalDate.of(2004, 9, 27));
 
         garfield.setName("Toto")
