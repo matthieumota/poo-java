@@ -45,13 +45,13 @@ public class Book {
     }
 
     public String keepPagesInPercent() {
-        float percent = this.keepPages() * 100 / (float) this.countPages();
+        float percent = (float) this.keepPages() * 100 / this.countPages(); // 16.4% => 16%
 
         return percent+"%";
     }
 
     public String pagesInPercent() {
-        float percent = (this.countPages() - this.keepPages()) * 100 / (float) this.countPages();
+        float percent = (float) (this.countPages() - this.keepPages()) * 100 / this.countPages();
 
         return percent+"%";
     }

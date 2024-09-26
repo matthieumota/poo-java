@@ -23,7 +23,7 @@ class App {
         l.addBook(b); // Ajoute le livre b dans un tableau
         l.addBook(b);
         Book b3 = new Book("Chambre des secrets", 300);
-        l.addBooks(Arrays.asList( // Ajoute les livres suivant dans un tableau
+        l.addBook(Arrays.asList( // Ajoute les livres suivant dans un tableau
             b3,
             new Book("Prisonnier d'Azkaban", 400),
             new Book("Coupe de feu", 500),
@@ -31,16 +31,25 @@ class App {
         ));
         // l.books(); // Renvoie le tableau avec tous les livres
         for (Book book : l.books()) {
-            System.out.println(book.getName());
+            System.out.println(book.getName() + ": " + book.countPages());
         }
+
+        for (int i = 0; i < l.books().size(); i++) {
+            Book bn = l.books().get(i);
+            System.out.print(bn.getName()+" :");
+            System.out.println(bn.countPages());
+        }
+
         System.out.println(l.count()); // Renvoie le nombre de livre dans la bibliothèque
         System.out.println(l.totalPages()); // Renvoie le nombre de pages de tous les livres
         Book b2 = l.getBook("Coupe de feu"); // Sélectionne le livre "Coupe de feu" s'il existe (l'objet)
-        System.out.println(b2.getName());
+        if (b2 != null) {
+            System.out.println(b2.getName());
+        }
         // Trouve tous les livres qui commencent par cette lettre (array_filter ?)
         for (Book book : l.findBooksByLetter('C')) {
             System.out.println(book.getName());
         }
-        //l.randomBook(); // Sélectionne un livre aléatoire
+        System.out.println(l.randomBook().getName()); // Sélectionne un livre aléatoire
     }
 }

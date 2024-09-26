@@ -2,6 +2,7 @@ package library.items;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Library {
     private List<Book> books = new ArrayList<Book>();
@@ -16,12 +17,14 @@ public class Library {
         return this;
     }
 
-    public Library addBooks(List<Book> bs) {
-        bs.forEach(b -> this.addBook(b));
+    public Library addBook(List<Book> bs) {
+        bs.forEach(b -> {
+            this.addBook(b);
+        });
 
         return this;
     }
-    
+
     public List<Book> books() {
         return this.books;
     }
@@ -50,7 +53,7 @@ public class Library {
         return null;
     }
 
-    public List<Book> findBooksByLetter(Character n) {
+    public List<Book> findBooksByLetter(char n) {
         List<Book> filtered = new ArrayList<Book>();
 
         for (Book book : this.books) {
@@ -60,5 +63,16 @@ public class Library {
         }
 
         return filtered;
+    }
+
+    public Book randomBook() {
+        if (this.books.isEmpty()) {
+            return null;
+        }
+
+        Random r = new Random();
+        int randomIndex = r.nextInt(this.books.size()); // entre 0 et 3
+
+        return this.books.get(randomIndex);
     }
 }
