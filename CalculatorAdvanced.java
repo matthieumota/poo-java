@@ -12,6 +12,28 @@ class CalculatorAdvanced {
         return this;
     }
 
+    public CalculatorAdvanced substract(int n) {
+        this.result -= n;
+
+        return this;
+    }
+
+    public CalculatorAdvanced divide(int n) {
+        if (n == 0) {
+            return this;
+        }
+
+        this.result /= n;
+
+        return this;
+    }
+
+    public CalculatorAdvanced multiply(int n) {
+        this.result *= n;
+
+        return this;
+    }
+
     // Une méthode "getter" permet d'accèder à une propriété
     // privée (getNomDeLaPropriété())
     public int getResult() {
