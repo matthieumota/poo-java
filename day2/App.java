@@ -10,7 +10,14 @@ class App {
         Address maison = new Address("Hulluch");
 
         garfield.addFriend(mina).addFriend(bianca);
-        System.out.println(garfield.getFriends());
+
+        for (int i = 0; i < garfield.getFriends().size(); i++) {
+            System.out.println(garfield.getFriends().get(i).getName());
+        }
+
+        for (Cat friend : garfield.getFriends()) {
+            System.out.println(friend.getName());
+        }
 
         garfield.setName("Toto")
             .setAddress(maison);
