@@ -9,6 +9,12 @@ class App {
         Cat mina = new Cat("Mina", LocalDate.of(2016, 9, 27));
         Address maison = new Address("Hulluch");
 
+        Cat titi = Cat.createWithAddress("Titi", "Paris", "2004-08-15");
+        System.out.println(titi.getName());
+        System.out.println(titi.getAddress().getCity());
+
+        System.out.println(Cat.count);
+
         garfield.addFriend(mina).addFriend(bianca);
 
         for (int i = 0; i < garfield.getFriends().size(); i++) {

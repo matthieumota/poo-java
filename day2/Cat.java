@@ -10,11 +10,23 @@ class Cat {
     private LocalDate birthday;
     private Address address;
     private List<Cat> friends;
+    public static int count;
 
     Cat(String n, LocalDate b) {
         this.name = n;
         this.birthday = b;
         this.friends = new ArrayList<Cat>();
+        Cat.count++;
+    }
+
+    public static Cat createWithAddress(String n, String c, String b) {
+        // LocalDate.of(2004, 11, 12);
+        // LocalDate.parse("2004-11-12");
+
+        Cat myCat = new Cat(n, LocalDate.parse(b));
+        myCat.setAddress(new Address(c));
+
+        return myCat;
     }
 
     public Cat addFriend(Cat friend) {
