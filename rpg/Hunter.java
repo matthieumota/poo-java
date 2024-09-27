@@ -6,14 +6,17 @@ class Hunter extends Character {
     }
 
     public void rangedAttack(Character target) {
-        if (super.handleAttack(target, this.strength * 3)) {
+        if (this.handleAttack(target, this.strength * 3)) {
             Character.debug(this.name + " attaque à distance " + target.name);
         }
     }
 
-    protected boolean handleAttack(Character target, int factor) {
-        System.out.println("Je fais n'importe quoi ici mais ça marche car j'utilise super...");
+    protected boolean handleAttack(Character target, int damage) {
+        // On imagine que Legolas lance 4 flèches...
+        super.handleAttack(target, damage);
+        super.handleAttack(target, damage);
+        super.handleAttack(target, damage);
 
-        return false;
+        return super.handleAttack(target, damage);
     }
 }

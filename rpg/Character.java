@@ -26,8 +26,8 @@ class Character {
         return this;
     }
 
-    protected boolean handleAttack(Character target, int factor) {
-        target.life -= factor;
+    protected boolean handleAttack(Character target, int damage) {
+        target.life -= damage;
 
         if (target.life <= 0) {
             target.life = 0;
