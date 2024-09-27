@@ -20,12 +20,6 @@ class Character {
         }
     }
 
-    public Character pick(Item item) {
-        this.items.add(item);
-
-        return this;
-    }
-
     protected boolean handleAttack(Character target, int damage) {
         target.life -= damage;
 
@@ -36,6 +30,12 @@ class Character {
         }
 
         return true;
+    }
+
+    public Character pick(Item item) {
+        this.items.add(item);
+
+        return this;
     }
 
     /**
